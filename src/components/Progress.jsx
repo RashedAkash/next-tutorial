@@ -8,7 +8,7 @@ const Progress = () => {
         <ProgressBar
           height="4px"
           color="#fffd00"
-          options={{ showSpinner: false }}
+          options={{ showSpinner: true }}
           shallowRouting
         />
     </div>

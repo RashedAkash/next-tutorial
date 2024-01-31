@@ -22,7 +22,7 @@ const Navbar = () => {
 				<Link rel="noopener noreferrer" href="/" className={`link ${pathname === '/' ? 'text-red-700 font-bold' : ' text-green-500 '}`}>Home</Link>
 			</li>
 			<li className="flex">
-				<Link rel="noopener noreferrer" href="/product" className={`link ${pathname === '/product' ? 'text-red-700 font-bold' : ' text-green-500 '}`}>Product</Link>
+				<Link rel="noopener noreferrer" href={{pathname:"/product",query:{name:'Laptop',price:'200'}}} className={`link ${pathname === '/product' ? 'text-red-700 font-bold' : ' text-green-500 '}`}>Product</Link>
 			</li>
 			<li className="flex">
 				<Link rel="noopener noreferrer" href="/about" className={`link ${pathname === '/about' ? 'text-red-700 font-bold' : ' text-green-500 '}`}>About</Link>
