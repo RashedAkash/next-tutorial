@@ -1,4 +1,4 @@
-"use client"
+
 async function getData() {
   const res = await fetch("https://dummyjson.com/products");
   // The return value is *not* serialized
