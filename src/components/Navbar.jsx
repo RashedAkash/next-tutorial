@@ -98,10 +98,14 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="items-center flex-shrink-0 hidden lg:flex">
-            <button className="self-center px-8 py-3 rounded">Sign in</button>
-            <button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">
-              Sign up
-            </button>
+            <Link href="/login">
+              <button className="self-center px-8 py-3 rounded">Sign in</button>
+            </Link>
+            <Link href="/signup">
+              <button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">
+                Sign up
+              </button>
+            </Link>
           </div>
           <button className="p-4 lg:hidden">
             <svg
