@@ -22,7 +22,8 @@ export const PATCH = async (req, res) => {
 
 // put
 export const PUT = async (req, res) => {
-  return NextResponse.json();
+  const cookies = req.cookies.get('token')
+  return NextResponse.json({cookies:cookies});
 };
 
 // delete
