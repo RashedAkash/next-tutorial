@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server"
 //get
-export const GET = async () => {
-   return NextResponse.json();
+export const GET = async (req,res) => {
+
+  const { searchParams } = new URL(req.url)
+  const name = searchParams.get('name')
+   return NextResponse.json({name:name});
 }
 
 //post
