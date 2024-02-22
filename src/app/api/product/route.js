@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import { NextResponse } from "next/server"
 //get
 export const GET = async (req,res) => {
@@ -14,7 +15,9 @@ export const POST = async (req, res) => {
 }
 // patch
 export const PATCH = async (req, res) => {
-  return NextResponse.json();
+  const header = headers();
+  const api = header.get('api')
+  return NextResponse.json({api:api});
 };
 
 // put
