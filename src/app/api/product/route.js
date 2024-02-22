@@ -9,7 +9,8 @@ export const GET = async (req,res) => {
 
 //post
 export const POST = async (req, res) => {
-  return NextResponse.json();
+  const data = await req.json();
+  return NextResponse.json({data:data});
 }
 // patch
 export const PATCH = async (req, res) => {
