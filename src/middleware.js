@@ -1,11 +1,19 @@
-import { NextResponse } from "next/server";
-
+import { NextResponse } from 'next/server'
+ 
 export function middleware(request) {
-  if (request.nextUrl.pathname.startsWith("/about")) {
-    return NextResponse.rewrite(new URL("/", request.url));
-  }
-
-  if (request.nextUrl.pathname.startsWith("/dashboard")) {
-    return NextResponse.rewrite(new URL("/dashboard/order", request.url));
-  }
+  // Clone the request headers and set a new header `x-hello-from-middleware1`
+  const requestHeaders = new Headers(request.headers)
+  requestHeaders.set('x-hello-from-middleware1', 'hello')
+ 
+  // You can also set request headers in NextResponse.rewrite
+  const response = NextResponse.next({
+    request: {
+      // New request headers
+      headers: requestHeaders,
+    },
+  })
+ 
+  // Set a new response header `x-hello-from-middleware2`
+  response.headers.set('x-hello-from-middleware2', 'hello')
+  return response
 }

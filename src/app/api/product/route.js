@@ -28,5 +28,7 @@ export const PUT = async (req, res) => {
 
 // delete
 export const DELETE = async (req, res) => {
-  return NextResponse.json();
+  const formData = await req.formData()
+  const name = await formData.get('name')
+  return NextResponse.json(name);
 };
