@@ -18,7 +18,9 @@ model users{
   fName String? @db.VarChar(50)
   lName String? @db.VarChar(50)
   age Int 
-  
+
+  createdAt DateTime @default(now()) @db.Timestamp()
+  updateAt DateTime @default(now()) @db.Timestamp()
 
 }
 
