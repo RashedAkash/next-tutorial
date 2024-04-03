@@ -15,12 +15,16 @@ datasource db {
 
 model users{
   id Int @id @default(autoincrement())
-  fName String? @db.VarChar(50)
-  lName String? @db.VarChar(50)
-  age Int 
+  fName String? @db.VarChar(100)
+  lName String? 
+  email String? @unique
+  password String? @db.VarChar(100)
+  otp String? 
+ 
 
   createdAt DateTime @default(now()) @db.Timestamp()
-  updateAt DateTime @default(now()) @db.Timestamp()
+  updatedAt DateTime @default(now()) @db.Timestamp() @updatedAt
+
 
 }
 
