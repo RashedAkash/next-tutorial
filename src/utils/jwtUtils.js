@@ -12,7 +12,11 @@ export const createToken = async (email, id) => {
   return token;
 };
 export const verifyToken = async (token) => {
-  const secret = new TextEncoder().encode(process.env.SECRET_KEY);
-  const decoded = await new jwtVerify(token, secret);
-  return decoded["payload"];
+  try {
+    const secret = new TextEncoder().encode(process.env.SECRET_KEY);
+    const decoded = await jwtVerify(token, secret);
+    return decoded.payload;
+  } catch (error) {
+    throw new Error("Token verification failed");
+  }
 };
