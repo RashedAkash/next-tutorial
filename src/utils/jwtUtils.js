@@ -15,5 +15,5 @@ export const createJwt = async (email,id) => {
 export const decodeJwt = async (token) => {
   const secret = new TextEncoder().encode("123-abc-xyz");
   const decode = await new jwtVerify(token, secret)
-  return decode;
+  return decode['payload'];
 }
